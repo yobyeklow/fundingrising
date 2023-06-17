@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply font-body text-base mx-auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1440px;
+  }
+}
+
+.border-t-transparent {
+  border-top: transparent;
+}
+.border-b-transparent {
+  border-bottom: transparent;
+}
+input:focus + .error-input {
+  display: none;
+}
+.quill {
+  @apply border border-strockColor rounded-xl;
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: 1px solid #f1f1f3;
+  text-align: center;
+  .ql-toolbar.ql-snow {
+    border: none;
+    background: none;
+
+    @apply bg-icon-color bg-opacity-10 rounded-lg py-3 px-5 inline-block;
+  }
+  .ql-container.ql-snow,
+  .ql-editor {
+    @apply font-body border-none text-base;
+  }
+  .ql-editor {
+    @apply pt-10;
+  }
+  .ql-editor.ql-blank::before {
+    font-style: normal;
+    content: "Write your story...";
+    @apply text-sm not-italic text-icon-color;
+  }
+}
+.gradient-banner {
+  background: linear-gradient(
+    179.14deg,
+    rgba(32, 18, 63, 0) -7.14%,
+    #000000 87.01%
+  );
+}
