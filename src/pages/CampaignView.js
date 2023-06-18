@@ -76,7 +76,10 @@ const CampaignView = () => {
         <Button classname="bg-primary text-white">Back this project</Button>
       </div>
       <div className="grid gap-x-[124px] grid-cols-[1.3fr,1fr]">
-        <div></div>
+        <div>
+          <h2 className="text-lg font-semibold uppercase mb-5">Story</h2>
+          <div className="w-full bg-white"></div>
+        </div>
         <div>
           <CampaignSupport></CampaignSupport>
           <div className="flex flex-col gap-y-[30px]">
