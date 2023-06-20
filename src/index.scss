@@ -54,3 +54,11 @@ input:focus + .error-input {
 .ReactModal__Body--open {
   overflow: hidden;
 }
+
+.scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}

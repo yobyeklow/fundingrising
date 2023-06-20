@@ -4,7 +4,7 @@ import { Button } from "../../components/button";
 
 const ContributeSummary = () => {
   return (
-    <div className="pt-[15px] px-5 shadow-[-10px_15px_20px_rgba(231,_228,_228,_0.15),_10px_10px_20px_rgba(231,_228,_228,_0.15)] rounded-[20px] bg-white">
+    <div className="pt-[15px] px-5 shadow-[-10px_15px_20px_rgba(231,_228,_228,_0.15),_10px_10px_20px_rgba(231,_228,_228,_0.15)] rounded-[20px] bg-white max-w-[462px]">
       <h2 className="text-neutral2 mb-[25px] font-semibold text-lg">
         Contribution Summury
       </h2>

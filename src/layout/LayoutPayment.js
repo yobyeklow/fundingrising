@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const LayoutPayment = ({ back = "/" }) => {
   return (
-    <div className="dark:bg-darkBG bg-liteBg py-10 px-[135px] w-full min-h-screen">
+    <div className="dark:bg-darkBG bg-liteBg p-10 w-full min-h-screen">
       <div className="mb-10 flex items-center justify-between">
         <img
           src="./Logo.png"
