@@ -1,10 +1,13 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import LayoutDashBoard from "./layout/LayoutDashBoard";
 import CampaignView from "./pages/CampaignView";
 import Modal from "react-modal";
 
 import LayoutPayment from "./layout/LayoutPayment";
+import { useDispatch, useSelector } from "react-redux";
+import { authRefreshToken, authUpdateUser } from "./store/auth/authSlice";
+import { getToken, logout } from "./utils/auth";
 
 const SignUpPage = lazy(() => import("./pages/SignUp"));
 const SignInPage = lazy(() => import("./pages/SignIn"));
@@ -19,6 +22,27 @@ const customStyles = {
 Modal.setAppElement("#root");
 Modal.defaultStyles = {};
 function App() {
+  // const { user } = useSelector((state) => state.auth);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   if (user && user.id) {
+  //     const { access_token } = getToken();
+  //     dispatch(
+  //       authUpdateUser({
+  //         user: user,
+  //         accessToken: access_token,
+  //       })
+  //     );
+  //   } else {
+  //     const { refresh_token } = getToken();
+  //     if (refresh_token) {
+  //       dispatch(authRefreshToken(refresh_token));
+  //     } else {
+  //       dispatch(authUpdateUser({}));
+  //       logout();
+  //     }
+  //   }
+  // }, [user]);
   return (
     <Suspense>
       <Routes>

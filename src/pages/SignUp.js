@@ -12,6 +12,8 @@ import * as yup from "yup";
 import { IconEyeToggle } from "../components/icons";
 import useToggleValue from "../hooks/useToggle";
 import ButtonGoogle from "../components/button/ButtonGoogle";
+import { useDispatch } from "react-redux";
+import { authRegister } from "../store/auth/authSlice";
 
 const SignUp = () => {
   const schema = yup.object({
@@ -36,13 +38,15 @@ const SignUp = () => {
     resolver: yupResolver(schema),
     mode: "onSubmit",
   });
+  const dispatch = useDispatch();
   const handleSignUp = (values) => {
-    console.log(values);
+    dispatch(authRegister(values));
   };
   const { value: acceptTerm, handleToggleValue: handleAcceptTerm } =
     useToggleValue();
   const { value: showPassword, handleToggleValue: handlePassword } =
     useToggleValue();
+
   return (
     <LayoutAuthentication heading="Sign Up">
       <p className="dark:text-neutral3 lg:mb-8 mb-6 text-lg font-normal text-center lg:text-sm">

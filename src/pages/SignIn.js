@@ -11,6 +11,9 @@ import * as yup from "yup";
 import useToggleValue from "../hooks/useToggle";
 import { IconEyeToggle } from "../components/icons";
 import { Button } from "../components/button";
+import { useDispatch } from "react-redux";
+
+import { authLogin } from "../store/auth/authSlice";
 const SignIn = () => {
   const schema = yup.object({
     email: yup
@@ -23,8 +26,9 @@ const SignIn = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema), mode: "onSubmit" });
-  const handleSubmitValue = (value) => {
-    console.log(value);
+  const dispatch = useDispatch();
+  const handleSubmitValue = (values) => {
+    dispatch(authLogin(values));
   };
   const { value: showPassword, handleToggleValue: handlePassword } =
     useToggleValue();
